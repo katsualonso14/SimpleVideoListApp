@@ -86,7 +86,6 @@ class ViewController: UIViewController {
             return
         }
         
-        // Emailの形式を検証
         if !isValidEmail(email) {
             showAlert(message: "正しいEmailアドレスを入力してください。")
             return
@@ -112,13 +111,12 @@ class ViewController: UIViewController {
             return
         }
         
-        // Emailの形式を検証
         if !isValidEmail(email) {
             showAlert(message: "正しいEmailアドレスを入力してください。")
             return
         }
         
-        // UserDefaultsにEmailとパスワードを保存
+        // UserDefaultsへの保存
         UserDefaults.standard.set(email, forKey: "email")
         UserDefaults.standard.set(password, forKey: "password")
         
