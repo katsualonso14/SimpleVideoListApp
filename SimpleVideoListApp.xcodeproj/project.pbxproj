@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		232787152D2D4AC8002C5441 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 232786F62D2D4AC7002C5441 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 232786FD2D2D4AC7002C5441;
+			remoteInfo = SimpleVideoListApp;
+		};
+		2327871F2D2D4AC8002C5441 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 232786F62D2D4AC7002C5441 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 232786FD2D2D4AC7002C5441;
+			remoteInfo = SimpleVideoListApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		232786FE2D2D4AC7002C5441 /* SimpleVideoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVideoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		232787142D2D4AC8002C5441 /* SimpleVideoListAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleVideoListAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2327871E2D2D4AC8002C5441 /* SimpleVideoListAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleVideoListAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		232787262D2D4AC8002C5441 /* Exceptions for "SimpleVideoListApp" folder in "SimpleVideoListApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 232786FD2D2D4AC7002C5441 /* SimpleVideoListApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		232787002D2D4AC7002C5441 /* SimpleVideoListApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				232787262D2D4AC8002C5441 /* Exceptions for "SimpleVideoListApp" folder in "SimpleVideoListApp" target */,
+			);
+			path = SimpleVideoListApp;
+			sourceTree = "<group>";
+		};
+		232787172D2D4AC8002C5441 /* SimpleVideoListAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleVideoListAppTests;
+			sourceTree = "<group>";
+		};
+		232787212D2D4AC8002C5441 /* SimpleVideoListAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleVideoListAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		232786FB2D2D4AC7002C5441 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		232787112D2D4AC8002C5441 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2327871B2D2D4AC8002C5441 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		232786F52D2D4AC7002C5441 = {
+			isa = PBXGroup;
+			children = (
+				232787002D2D4AC7002C5441 /* SimpleVideoListApp */,
+				232787172D2D4AC8002C5441 /* SimpleVideoListAppTests */,
+				232787212D2D4AC8002C5441 /* SimpleVideoListAppUITests */,
+				232786FF2D2D4AC7002C5441 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		232786FF2D2D4AC7002C5441 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				232786FE2D2D4AC7002C5441 /* SimpleVideoListApp.app */,
+				232787142D2D4AC8002C5441 /* SimpleVideoListAppTests.xctest */,
+				2327871E2D2D4AC8002C5441 /* SimpleVideoListAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		232786FD2D2D4AC7002C5441 /* SimpleVideoListApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 232787272D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListApp" */;
+			buildPhases = (
+				232786FA2D2D4AC7002C5441 /* Sources */,
+				232786FB2D2D4AC7002C5441 /* Frameworks */,
+				232786FC2D2D4AC7002C5441 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				232787002D2D4AC7002C5441 /* SimpleVideoListApp */,
+			);
+			name = SimpleVideoListApp;
+			packageProductDependencies = (
+			);
+			productName = SimpleVideoListApp;
+			productReference = 232786FE2D2D4AC7002C5441 /* SimpleVideoListApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		232787132D2D4AC8002C5441 /* SimpleVideoListAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2327872C2D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListAppTests" */;
+			buildPhases = (
+				232787102D2D4AC8002C5441 /* Sources */,
+				232787112D2D4AC8002C5441 /* Frameworks */,
+				232787122D2D4AC8002C5441 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				232787162D2D4AC8002C5441 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				232787172D2D4AC8002C5441 /* SimpleVideoListAppTests */,
+			);
+			name = SimpleVideoListAppTests;
+			packageProductDependencies = (
+			);
+			productName = SimpleVideoListAppTests;
+			productReference = 232787142D2D4AC8002C5441 /* SimpleVideoListAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2327871D2D2D4AC8002C5441 /* SimpleVideoListAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2327872F2D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListAppUITests" */;
+			buildPhases = (
+				2327871A2D2D4AC8002C5441 /* Sources */,
+				2327871B2D2D4AC8002C5441 /* Frameworks */,
+				2327871C2D2D4AC8002C5441 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				232787202D2D4AC8002C5441 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				232787212D2D4AC8002C5441 /* SimpleVideoListAppUITests */,
+			);
+			name = SimpleVideoListAppUITests;
+			packageProductDependencies = (
+			);
+			productName = SimpleVideoListAppUITests;
+			productReference = 2327871E2D2D4AC8002C5441 /* SimpleVideoListAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		232786F62D2D4AC7002C5441 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					232786FD2D2D4AC7002C5441 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					232787132D2D4AC8002C5441 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 232786FD2D2D4AC7002C5441;
+					};
+					2327871D2D2D4AC8002C5441 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 232786FD2D2D4AC7002C5441;
+					};
+				};
+			};
+			buildConfigurationList = 232786F92D2D4AC7002C5441 /* Build configuration list for PBXProject "SimpleVideoListApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 232786F52D2D4AC7002C5441;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 232786FF2D2D4AC7002C5441 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				232786FD2D2D4AC7002C5441 /* SimpleVideoListApp */,
+				232787132D2D4AC8002C5441 /* SimpleVideoListAppTests */,
+				2327871D2D2D4AC8002C5441 /* SimpleVideoListAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		232786FC2D2D4AC7002C5441 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		232787122D2D4AC8002C5441 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2327871C2D2D4AC8002C5441 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		232786FA2D2D4AC7002C5441 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		232787102D2D4AC8002C5441 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2327871A2D2D4AC8002C5441 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		232787162D2D4AC8002C5441 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 232786FD2D2D4AC7002C5441 /* SimpleVideoListApp */;
+			targetProxy = 232787152D2D4AC8002C5441 /* PBXContainerItemProxy */;
+		};
+		232787202D2D4AC8002C5441 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 232786FD2D2D4AC7002C5441 /* SimpleVideoListApp */;
+			targetProxy = 2327871F2D2D4AC8002C5441 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		232787282D2D4AC8002C5441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleVideoListApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		232787292D2D4AC8002C5441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleVideoListApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2327872A2D2D4AC8002C5441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2327872B2D2D4AC8002C5441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2327872D2D2D4AC8002C5441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleVideoListApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleVideoListApp";
+			};
+			name = Debug;
+		};
+		2327872E2D2D4AC8002C5441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleVideoListApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleVideoListApp";
+			};
+			name = Release;
+		};
+		232787302D2D4AC8002C5441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimpleVideoListApp;
+			};
+			name = Debug;
+		};
+		232787312D2D4AC8002C5441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RXTSJ9F9Z8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katsuyatamai.SimpleVideoListAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimpleVideoListApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		232786F92D2D4AC7002C5441 /* Build configuration list for PBXProject "SimpleVideoListApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2327872A2D2D4AC8002C5441 /* Debug */,
+				2327872B2D2D4AC8002C5441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		232787272D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				232787282D2D4AC8002C5441 /* Debug */,
+				232787292D2D4AC8002C5441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2327872C2D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2327872D2D2D4AC8002C5441 /* Debug */,
+				2327872E2D2D4AC8002C5441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2327872F2D2D4AC8002C5441 /* Build configuration list for PBXNativeTarget "SimpleVideoListAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				232787302D2D4AC8002C5441 /* Debug */,
+				232787312D2D4AC8002C5441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 232786F62D2D4AC7002C5441 /* Project object */;
+}
