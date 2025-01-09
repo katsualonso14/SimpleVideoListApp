@@ -1,13 +1,7 @@
 
-
 import UIKit
 
-//- **タイトル名** (`title`)
-//- **名前** (`name`)
-//- **チャンネルID** (`id`)
-//- **サムネイル画像** (`image`)
-
-class MovieCell: UITableViewCell {
+class VideoCell: UITableViewCell {
     let titleLabel = UILabel()
     let nameLabel = UILabel()
     let idLabel = UILabel()

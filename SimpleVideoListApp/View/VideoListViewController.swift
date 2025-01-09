@@ -6,11 +6,6 @@ import RealmSwift
 
 class VideoListViewController: UITableViewController {
     let activityIndicator = UIActivityIndicatorView(style: .large)
-    var movieTitleList: [String] = []
-    var movieNameList: [String] = []
-    var movieIdList: [String] = []
-    var movieImageList: [String] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +24,16 @@ class VideoListViewController: UITableViewController {
         view.addSubview(activityIndicator)
         
         // TableViewの設定
-        tableView.register(MovieCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    func setupMovieListTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(MovieCell.self, forCellReuseIdentifier: "cell")
-    }
+//    func setupVideoListTableView() {
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
+//    }
     
     func setupCheckApiButton() {
         let checkApiButton = UIButton()
@@ -127,7 +122,7 @@ class VideoListViewController: UITableViewController {
                   tableView.reloadData()
         }
 
-        print(movieImageList.first ?? "test")
+     print("APIリクエスト終了") // 確認用
     }
     //MARK: - Realm
     //Realm読み込み 【確認用】
@@ -142,7 +137,7 @@ class VideoListViewController: UITableViewController {
     }
     
     //Realmデータ削除 【確認用】
-    func deleteAllMovies() {
+    func deleteAllVideos() {
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
@@ -158,7 +153,7 @@ class VideoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! VideoCell
         
         let realm = try! Realm()
         let videoItems = realm.objects(VideoItem.self)
@@ -179,7 +174,15 @@ class VideoListViewController: UITableViewController {
     }
     // タップ時の処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Movie \(indexPath.row) tapped")
+        //id取得
+        let realm = try! Realm()
+        let videoItems = realm.objects(VideoItem.self)
+        print("id: \(videoItems[indexPath.row].id)")
+        //https://live.fc2.com/<id> のURLに遷移するため、チャンネルIDを埋め込んだURLを生成します。
+        // idを渡し遷移
+        let videoScreenViewController = VideoScreenViewController()
+        videoScreenViewController.id = videoItems[indexPath.row].id
+        navigationController?.pushViewController(videoScreenViewController, animated: true)
     }
     
     //MARK: - Helper
