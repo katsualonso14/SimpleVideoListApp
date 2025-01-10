@@ -5,35 +5,21 @@ import UIKit
 import RealmSwift
 
 class VideoListViewController: UITableViewController {
-    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        setupUI()
+        setupVideoListTableView()
 //        readApiConect()
         
     }
     
     // MARK: Layout
-    func setupUI() {
-        // Activity Indicatorの設定
-        //TODO: 画像のみにInndicatorを適用に変更する
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
-        
-        // TableViewの設定
-        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
+    func setupVideoListTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
     }
-    
-//    func setupVideoListTableView() {
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
-//    }
     
     func setupCheckApiButton() {
         let checkApiButton = UIButton()
@@ -83,7 +69,6 @@ class VideoListViewController: UITableViewController {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     DispatchQueue.main.async {
                           self.checkUrlRequestContents(json: json)
-                          self.activityIndicator.stopAnimating()
                       }
                 } catch {
                     print("Failed to parse JSON: \(error)")
@@ -105,7 +90,6 @@ class VideoListViewController: UITableViewController {
                     videoItem.title = content["title"] as? String ?? ""
                     videoItem.name = content["name"] as? String ?? ""
                     videoItem.id = content["id"] as? String ?? ""
-//                    videoItem.image = content["image"] as? Data ?? Data()
                     videoItem.image = content["image"] as? String ?? ""
                     return videoItem
                 }
@@ -162,14 +146,25 @@ class VideoListViewController: UITableViewController {
         cell.nameLabel.text = videoItems[indexPath.row].name
         cell.idLabel.text = videoItems[indexPath.row].id
         
-        //サムネイル表示
+        // サムネイル表示
         if let url = URL(string: videoItems[indexPath.row].image) {
             downloadImage(from: url) { image in
                 DispatchQueue.main.async {
-                    cell.image.image = image
+                    if let image = image {
+                        cell.image.image = image
+                    } else {
+                        // エラー時
+                        cell.image.image = UIImage(named: "NoImage")
+                    }
+                    cell.activityIndicator.stopAnimating()
                 }
             }
+        } else {
+            // URLが無効な場合
+            cell.activityIndicator.stopAnimating()
+            cell.image.image = UIImage(named: "NoImage")
         }
+        
         return cell
     }
     // タップ時の処理
@@ -177,8 +172,7 @@ class VideoListViewController: UITableViewController {
         //id取得
         let realm = try! Realm()
         let videoItems = realm.objects(VideoItem.self)
-        print("id: \(videoItems[indexPath.row].id)")
-        //https://live.fc2.com/<id> のURLに遷移するため、チャンネルIDを埋め込んだURLを生成します。
+        print("id: \(videoItems[indexPath.row].id)") // 確認用
         // idを渡し遷移
         let videoScreenViewController = VideoScreenViewController()
         videoScreenViewController.id = videoItems[indexPath.row].id

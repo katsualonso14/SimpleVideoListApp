@@ -7,6 +7,12 @@ class VideoCell: UITableViewCell {
     let idLabel = UILabel()
     let image = UIImageView()
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true // ストップ時に非表示
+        return indicator
+    }()
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -16,6 +22,7 @@ class VideoCell: UITableViewCell {
         setupNameLabel()
         setupIdLabel()
         setupImageView()
+        startLoading()
     }
     
     required init?(coder: NSCoder) {
@@ -77,6 +84,17 @@ class VideoCell: UITableViewCell {
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -10),
             image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
             image.heightAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    
+    func startLoading() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.startAnimating()
+        contentView.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: image.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: image.centerYAnchor)
         ])
     }
     
