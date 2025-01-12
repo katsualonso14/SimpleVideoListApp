@@ -9,7 +9,7 @@ class LoginViewController: UIViewController {
     let loginButton = UIButton()
     let videoListVC = VideoListViewController()
     var isLogout = false
-    let viewModel = AppRepository()
+    let appViewModel = AppViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,25 +113,14 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // UserDefaults確認
-        let savedEmail = UserDefaults.standard.string(forKey: "email")
-        let savedPassword = UserDefaults.standard.string(forKey: "password")
+        // UserDefaultsセット
+        let savedEmail = appViewModel.setUserInfo()["email"] as? String
+        let savedPassword = appViewModel.setUserInfo()["password"] as? String
         
         // UserDefaultsのチェック
         if email == savedEmail && password == savedPassword {
-            // UserDefaultsに最終ログイン時間を保存
-            let currentTime = Date().timeIntervalSince1970
-            UserDefaults.standard.set(currentTime, forKey: "lastLoginTime")
-            // ログイン判定処理
-            // ログイン履歴をUserDefaultsに保存
-            let hasVisitedBefore = UserDefaults.standard.bool(forKey: "hasVisitedBefore")
-            // 初回は存在しないのでfalse
-            if hasVisitedBefore == false {
-                // ２回目以降のためにtrueを設定する
-                UserDefaults.standard.set(true, forKey: "hasVisitedBefore")
-            } else {
-                //２回目以降の処理
-            }
+            appViewModel.setVisitedBefore() // 初回起動フラグセット
+            appViewModel.setLoginTime() // 最後のログイン時間保存
             
             //遷移
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {

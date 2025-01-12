@@ -1,11 +1,9 @@
 import Foundation
-import RealmSwift
 
-
-class VideoRepository {
+class APIRepository {
     
     private let apiURL = "https://live.fc2.com/contents/allchannellist.php"
-    // 動画データ取得とRealmへの保存
+    
     func fetchFromAPI(completion: @escaping ([VideoItem]) -> Void) {
         guard let url = URL(string: apiURL) else {
             completion([])
@@ -36,8 +34,6 @@ class VideoRepository {
                         videoItem.image = content["image"] as? String ?? ""
                         return videoItem
                     }
-                    // Realmに保存
-                    self.saveVideos(videoItems)
                     completion(videoItems)
                 } else {
                     completion([])
@@ -48,20 +44,5 @@ class VideoRepository {
             }
         }.resume()
     }
-    // ローカルDBから取得
-    func fetchFromLocalDB() -> [VideoItem] {
-        let realm = try! Realm()
-        let videos = Array(realm.objects(VideoItem.self))
-        return videos
-    }
-    
-    // ローカルDB保存
-    func saveVideos(_ videos: [VideoItem]) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(videos)
-        }
-    }
-    
     
 }

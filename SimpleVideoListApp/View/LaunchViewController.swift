@@ -13,7 +13,7 @@ class LaunchViewController: UIViewController {
     
     func navigateToScreen() {
         //初回起動かで遷移先を判定
-        if viewModel.checkFirstLaunch() {
+        if viewModel.checkVisitedBefore() {
             if(viewModel.checkLoginTime()) {
                 // 5分以内の再起動: 自動ログイン
                 navigateToVideoList()

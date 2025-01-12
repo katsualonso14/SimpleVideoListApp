@@ -1,46 +1,44 @@
-import Combine
 import Foundation
 
-//AppRepositoryからViewに
 class AppViewModel {
-    private let appRepository = AppRepository()
-    private let videoRepository = VideoRepository()
-//    private var cancellables = Set<AnyCancellable>()
-    // データ取得方法
-    @Published var dataSource: String = ""
-    
-    //TODO: この処理がいるか検討
-//    func checkLoginOrVideoList() -> String {
-//        if (checkFirstLaunch() == true) {
-//            return "VideoList"
-//        } else {
-//            return "Login"
-//        }
-//    }
+    private let userDefaultsRepository = UserDefaultsRepository()
+    private let apiRepository = APIRepository()
+    private let localDBRepository = LocalDBRepository()
     
     // 初回起動チェック
-    func checkFirstLaunch() -> Bool {
-        if (appRepository.hasVisitedBefore == false) {
-            appRepository.setHasVisitedBefore()
-            return false
-        } else {
-            return true
-        }
+    func checkVisitedBefore() -> Bool {
+        return userDefaultsRepository.getHasVisitedBefore()
     }
-    
+    // 初回起動フラグセット
+    func setVisitedBefore() {
+        userDefaultsRepository.setHasVisitedBefore()
+    }
     // 最後のログイン時間確認
     func checkLoginTime() -> Bool {
-        guard let lastLoginTime = appRepository.getLastLoginTime() else {
+        guard let lastLoginTime = userDefaultsRepository.getLastLoginTime() else {
             return false
         }
         
         let currentTime = Date().timeIntervalSince1970
-        return (currentTime - lastLoginTime) <= 300
+        let elapsedTime = currentTime - lastLoginTime
+        print("checkLogin: \(elapsedTime <= 300)")
+        return elapsedTime <= 300
+    }
+    
+    //　最後のログイン時間保存ログイン
+    func setLoginTime() {
+        let currentTime = Date().timeIntervalSince1970
+        userDefaultsRepository.setLastLoginTime(currentTime)
+    }
+    
+    // Email, Passwordセット
+    func setUserInfo() -> [String: String?] {
+        return userDefaultsRepository.setUserInfo()
     }
     
     func getData(completion: @escaping ([VideoItem]) -> Void) {
         // 初回起動確認
-        if appRepository.hasVisitedBefore {
+        if userDefaultsRepository.getHasVisitedBefore() {
             handleSecondLaunch(completion: completion)
         } else {
             handleFirstLaunch(completion: completion)
@@ -50,16 +48,18 @@ class AppViewModel {
     private func handleSecondLaunch(completion: @escaping ([VideoItem]) -> Void) {
         //最終ログイン時間チェック
         if checkLoginTime() {
-            completion(videoRepository.fetchFromLocalDB())
+            completion(localDBRepository.fetchFromLocalDB())
         } else {
-            videoRepository.fetchFromAPI { items in
+            apiRepository.fetchFromAPI { items in
                 completion(items)
+                self.localDBRepository.saveVideos(items)// ローカルDBに保存
             }
         }
     }
 
     private func handleFirstLaunch(completion: @escaping ([VideoItem]) -> Void) {
-        videoRepository.fetchFromAPI { items in
+        apiRepository.fetchFromAPI { items in
+            self.localDBRepository.saveVideos(items)// ローカルDBに保存
             completion(items)
         }
     }
