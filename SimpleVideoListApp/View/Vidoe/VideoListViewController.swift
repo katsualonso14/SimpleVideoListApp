@@ -1,17 +1,12 @@
-
-
 import Foundation
 import UIKit
 import RealmSwift
 import Combine
 
 class VideoListViewController: UITableViewController {
-    
-    var dataSource: String?
-    var cancellables: Set<AnyCancellable> = []
-    let appViewModel = AppViewModel()
     let imageViewModel = ImageViewModel()
-    private var videoItems: [VideoItem] = []
+    var videoItems: [VideoItem] = []
+    let videoViewModel = VideoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +14,8 @@ class VideoListViewController: UITableViewController {
         setupNaviBar()
         setupVideoListTableView()
         // データ取得
-        appViewModel.getData { [weak self] items in
+        videoViewModel.getData { [weak self] items in
             DispatchQueue.main.async {
-                // データをリストにセットして画面を更新
                 self?.videoItems = items
                 self?.tableView.reloadData()
             }
@@ -40,7 +34,7 @@ class VideoListViewController: UITableViewController {
         tableView.delegate = self
         tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
     }
-    //MARK: - Tableview設定
+    //MARK: - Tableview
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoItems.count
     }
@@ -60,20 +54,16 @@ class VideoListViewController: UITableViewController {
                 }
             }
         }
-        
         return cell
     }
     // タップ時の処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //id取得
-        let realm = try! Realm()
-        let videoItems = realm.objects(VideoItem.self)
         print("id: \(videoItems[indexPath.row].id)") // 確認用
-        // idを渡し遷移
         let videoScreenViewController = VideoScreenViewController()
         videoScreenViewController.id = videoItems[indexPath.row].id
         navigationController?.pushViewController(videoScreenViewController, animated: true)
     }
+    // MARK: - Function
     // エラーアラート表示
     func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

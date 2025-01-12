@@ -9,7 +9,6 @@ class VideoScreenViewController: UIViewController, WKUIDelegate {
     var webView: WKWebView!
     var urlTextField: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

@@ -2,7 +2,6 @@ import Foundation
 import UIKit
 
 class ImageViewModel {
-    
     // 画像の取得
     func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in

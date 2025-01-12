@@ -5,6 +5,7 @@ import UIKit
 
 class LaunchViewController: UIViewController {
     private let viewModel = AppViewModel()
+    private let loginCheckViewModel = LoginCheckViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +15,7 @@ class LaunchViewController: UIViewController {
     func navigateToScreen() {
         //初回起動かで遷移先を判定
         if viewModel.checkVisitedBefore() {
-            if(viewModel.checkLoginTime()) {
+            if(loginCheckViewModel.checkLoginTime()) {
                 // 5分以内の再起動: 自動ログイン
                 navigateToVideoList()
             } else {

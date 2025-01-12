@@ -10,6 +10,7 @@ class LoginViewController: UIViewController {
     let videoListVC = VideoListViewController()
     var isLogout = false
     let appViewModel = AppViewModel()
+    let loginCheckViewModel = LoginCheckViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +121,7 @@ class LoginViewController: UIViewController {
         // UserDefaultsのチェック
         if email == savedEmail && password == savedPassword {
             appViewModel.setVisitedBefore() // 初回起動フラグセット
-            appViewModel.setLoginTime() // 最後のログイン時間保存
+            loginCheckViewModel.setLoginTime() // 最後のログイン時間保存
             
             //遷移
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
