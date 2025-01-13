@@ -10,7 +10,6 @@ class LoginViewController: UIViewController {
     let videoListVC = VideoListViewController()
     var isLogout = false
     let appViewModel = AppViewModel()
-    let loginCheckViewModel = LoginCheckViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,15 +113,12 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // UserDefaultsセット
+        // UserDefaults保存
         let savedEmail = appViewModel.setUserInfo()["email"] as? String
         let savedPassword = appViewModel.setUserInfo()["password"] as? String
         
         // UserDefaultsのチェック
         if email == savedEmail && password == savedPassword {
-            appViewModel.setVisitedBefore() // 初回起動フラグセット
-            loginCheckViewModel.setLoginTime() // 最後のログイン時間保存
-            
             //遷移
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 if let window = windowScene.windows.first {
@@ -150,12 +146,9 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // UserDefaultsへの保存
-        UserDefaults.standard.set(email, forKey: "email")
-        UserDefaults.standard.set(password, forKey: "password")
-        let currentTime = Date().timeIntervalSince1970
-        UserDefaults.standard.set(currentTime, forKey: "lastLoginTime")
-        
+        // UserDefaults保存
+        let savedEmail = appViewModel.setUserInfo()["email"] as? String
+        let savedPassword = appViewModel.setUserInfo()["password"] as? String
         showAlert(message: "登録が完了しました")
     }
     

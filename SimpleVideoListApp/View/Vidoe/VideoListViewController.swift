@@ -7,6 +7,8 @@ class VideoListViewController: UITableViewController {
     let imageViewModel = ImageViewModel()
     var videoItems: [VideoItem] = []
     let videoViewModel = VideoViewModel()
+    let appViewModel = AppViewModel()
+    let loginCheckViewModel = LoginCheckViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,9 @@ class VideoListViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        appViewModel.setVisitedBefore() // 初回起動フラグセット
+        loginCheckViewModel.setLoginTime() // 最後のログイン時間保存
         
     }
     // MARK: Layout

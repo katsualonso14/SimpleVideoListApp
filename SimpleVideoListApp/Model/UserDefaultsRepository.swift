@@ -6,7 +6,7 @@ class UserDefaultsRepository {
     func getHasVisitedBefore() -> Bool {
         return UserDefaults.standard.bool(forKey: "hasVisitedBefore")
     }
-    //初期起動フラグをセット
+    //初期起動フラグを保存
     func setHasVisitedBefore() {
         UserDefaults.standard.set(true, forKey: "hasVisitedBefore")
     }
@@ -21,12 +21,11 @@ class UserDefaultsRepository {
         UserDefaults.standard.set(time, forKey: "lastLoginTime")
     }
     
-    // ユーザー情報セット
+    // ユーザー情報を保存
     func setUserInfo() -> [String: String?] {
         return [
             "email": UserDefaults.standard.string(forKey: "email"),
             "password": UserDefaults.standard.string(forKey: "password")
         ]
     }
-    
 }

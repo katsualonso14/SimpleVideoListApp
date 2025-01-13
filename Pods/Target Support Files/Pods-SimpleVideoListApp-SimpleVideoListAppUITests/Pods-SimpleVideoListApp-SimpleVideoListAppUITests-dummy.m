@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_SimpleVideoListApp_SimpleVideoListAppUITests : NSObject
-@end
-@implementation PodsDummy_Pods_SimpleVideoListApp_SimpleVideoListAppUITests
-@end

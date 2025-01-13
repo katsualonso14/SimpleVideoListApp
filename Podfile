@@ -15,9 +15,6 @@ target 'SimpleVideoListApp' do
     # Pods for testing
   end
 
-  target 'SimpleVideoListAppUITests' do
-    # Pods for testing
-  end
   post_install do |installer|
       installer.generated_projects.each do |project|
           project.targets.each do |target|

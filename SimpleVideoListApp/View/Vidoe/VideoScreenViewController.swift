@@ -4,7 +4,6 @@ import UIKit
 import WebKit
 
 class VideoScreenViewController: UIViewController, WKUIDelegate {
-    //受け取るid
     var id: String = ""
     var webView: WKWebView!
     var urlTextField: UITextField!
@@ -39,19 +38,18 @@ class VideoScreenViewController: UIViewController, WKUIDelegate {
         ])
     }
 
-    // テキストフィールドのUIを作成するメソッド
     func setupTextField() {
         urlTextField = UITextField()
         urlTextField.frame = CGRect(x: 20, y: 130, width: self.view.frame.width - 40, height: 40)
         urlTextField.placeholder = "Enter URL"
         urlTextField.borderStyle = .roundedRect
         urlTextField.text = "https://live.fc2.com/\(id)"
-        // テキストフィールドの内容が変更された時にWebViewを再読み込み
+        // WebViewを再読み込み
         urlTextField.addTarget(self, action: #selector(reloadWebView), for: .editingChanged)
         view.addSubview(urlTextField)
 
     }
-    // WebViewを再読み込みするメソッド
+    
     @objc func reloadWebView() {
         if let url = URL(string: urlTextField.text ?? "") {
             let request = URLRequest(url: url)

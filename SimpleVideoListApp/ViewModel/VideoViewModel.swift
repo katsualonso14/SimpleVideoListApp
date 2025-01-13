@@ -16,22 +16,47 @@ class VideoViewModel {
     }
 
     private func handleSecondLaunch(completion: @escaping ([VideoItem]) -> Void) {
-        //最終ログイン時間チェック
+        // 最終ログイン時間チェック
         if loginCheckViewModel.checkLoginTime() {
-            completion(localDBRepository.fetchFromLocalDB())
+            do {
+                let videos = try localDBRepository.fetchVideos()
+                completion(videos)
+            } catch {
+                print("Error fetching videos from local DB: \(error)")
+                completion([])
+            }
         } else {
             apiRepository.fetchFromAPI { items in
                 completion(items)
-                self.localDBRepository.saveVideos(items)// ローカルDBに保存
+                DispatchQueue.global().async {
+                    self.localDBRepository.saveVideos(items) { error in
+                        if let error = error {
+                            print("Error saving videos to local DB: \(error)")
+                        }
+                    }
+                }
             }
         }
     }
 
     private func handleFirstLaunch(completion: @escaping ([VideoItem]) -> Void) {
         apiRepository.fetchFromAPI { items in
-            self.localDBRepository.saveVideos(items)// ローカルDBに保存
-            completion(items)
+            DispatchQueue.global().async {
+                self.localDBRepository.saveVideos(items) { error in
+                    if let error = error {
+                        print("Error saving videos to local DB: \(error)")
+                        DispatchQueue.main.async {
+                            completion([])
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(items)
+                        }
+                    }
+                }
+            }
         }
     }
+
 
 }

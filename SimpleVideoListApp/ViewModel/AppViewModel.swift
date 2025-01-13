@@ -7,11 +7,11 @@ class AppViewModel {
     func checkVisitedBefore() -> Bool {
         return userDefaultsRepository.getHasVisitedBefore()
     }
-    // 初回起動フラグセット
+    // 初回起動フラグ保存
     func setVisitedBefore() {
         userDefaultsRepository.setHasVisitedBefore()
     }
-    // Email, Passwordセット
+    // Email,Password保存
     func setUserInfo() -> [String: String?] {
         return userDefaultsRepository.setUserInfo()
     }
