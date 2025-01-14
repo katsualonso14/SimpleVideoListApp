@@ -22,12 +22,14 @@ class LoginViewController: UIViewController {
     func setupEmailTextField() {
         emailTextField.placeholder = "メールアドレス"
         emailTextField.borderStyle = .roundedRect
+        emailTextField.backgroundColor = .systemGray6
+        emailTextField.textColor = .black
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(emailTextField)
         
         NSLayoutConstraint.activate([
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
             emailTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -36,12 +38,14 @@ class LoginViewController: UIViewController {
         passwordTextField.placeholder = "パスワード"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .roundedRect
+        passwordTextField.backgroundColor = .systemGray6
+        passwordTextField.textColor = .black
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passwordTextField.widthAnchor.constraint(equalToConstant: 300),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -50,7 +54,10 @@ class LoginViewController: UIViewController {
     func setupLoginButton() {
         loginButton.backgroundColor = .systemBlue
         loginButton.setTitle("ログイン", for: .normal)
+        loginButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.layer.cornerRadius = 20
+        loginButton.layer.masksToBounds = true
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         view.addSubview(loginButton)
         
@@ -66,13 +73,16 @@ class LoginViewController: UIViewController {
         let registerButton = UIButton()
         registerButton.backgroundColor = .systemGreen
         registerButton.setTitle("新規登録", for: .normal)
+        registerButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
+        registerButton.layer.cornerRadius = 20
+        registerButton.layer.masksToBounds = true
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         view.addSubview(registerButton)
         
         NSLayoutConstraint.activate([
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
             registerButton.widthAnchor.constraint(equalToConstant: 200),
             registerButton.heightAnchor.constraint(equalToConstant: 40)
         ])
