@@ -1,4 +1,3 @@
-
 import UIKit
 
 class VideoCell: UITableViewCell {
@@ -80,7 +79,7 @@ class VideoCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             image.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -10),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             image.heightAnchor.constraint(equalToConstant: 100),
             image.widthAnchor.constraint(equalToConstant: 100)

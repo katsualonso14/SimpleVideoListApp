@@ -1,5 +1,3 @@
-
-
 import Foundation
 import UIKit
 
@@ -13,21 +11,18 @@ class LaunchViewController: UIViewController {
     }
     
     func navigateToScreen() {
-        //初回起動かで遷移先を判定
+        //初回起動で遷移先を判定
         if viewModel.checkVisitedBefore() {
             if(loginCheckViewModel.checkLoginTime()) {
                 // 5分以内の再起動: 自動ログイン
                 navigateToVideoList()
             } else {
-                // ログイン画面に遷移
-                navigateToLogin()
+                navigateToLogin() // ログイン画面に遷移
             }
         } else {
-            // ログイン画面に遷移
-            navigateToLogin()
+            navigateToLogin() // ログイン画面に遷移
         }
     }
-    
     // ビデオ一覧ページに遷移
     func navigateToVideoList() {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
@@ -39,7 +34,6 @@ class LaunchViewController: UIViewController {
             }
         }
     }
-    
     // ログイン画面に遷移
     func navigateToLogin() {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {

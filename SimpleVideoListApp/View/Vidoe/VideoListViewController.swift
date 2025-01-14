@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 import RealmSwift
-import Combine
 
 class VideoListViewController: UITableViewController {
     let imageViewModel = ImageViewModel()
@@ -69,12 +68,6 @@ class VideoListViewController: UITableViewController {
         navigationController?.pushViewController(videoScreenViewController, animated: true)
     }
     // MARK: - Function
-    // エラーアラート表示
-    func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
     //login画面に戻る【確認用】
     @objc func backButtonTapped() {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {

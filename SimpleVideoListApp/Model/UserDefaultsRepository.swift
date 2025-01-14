@@ -1,4 +1,3 @@
-
 import Foundation
 
 class UserDefaultsRepository {
@@ -21,11 +20,17 @@ class UserDefaultsRepository {
         UserDefaults.standard.set(time, forKey: "lastLoginTime")
     }
     
-    // ユーザー情報を保存
-    func setUserInfo() -> [String: String?] {
+    // ユーザー情報を取得
+    func getUserInfo() -> [String: String?] {
         return [
             "email": UserDefaults.standard.string(forKey: "email"),
             "password": UserDefaults.standard.string(forKey: "password")
         ]
+    }
+    
+    // ユーザー情報を保存
+    func setUserInfo(email: String, password: String) {
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(password, forKey: "password")
     }
 }

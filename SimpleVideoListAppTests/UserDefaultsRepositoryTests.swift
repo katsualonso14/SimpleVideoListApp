@@ -36,15 +36,27 @@ class UserDefaultsRepositoryTests: XCTestCase {
         XCTAssertEqual(userDefaultsRepository.getLastLoginTime()!, currentTime, accuracy: 1.0, "ログイン時間が一致しません")
     }
 
-    // ユーザー情報保存テスト
-    func testSetUserInfo() {
+    // ユーザー情報取得テスト
+    func testGetUserInfo() {
         let email = "test@example.com" // for test
         let password = "123"   // for test
         UserDefaults.standard.set(email, forKey: "email")
         UserDefaults.standard.set(password, forKey: "password")
         
-        let userInfo = userDefaultsRepository.setUserInfo()
+        let userInfo = userDefaultsRepository.getUserInfo()
         XCTAssertEqual(userInfo["email"] ?? "", email, "Emailが一致しません")
         XCTAssertEqual(userInfo["password"] ?? "", password, "Passwordが一致しません")
+    }
+    
+    // ユーザー情報保存テスト
+    func testSetUserInfo() {
+        let email = "test@example.com"
+        let password = "123"
+        userDefaultsRepository.setUserInfo(email: email, password: password)
+        
+        let getEmail = UserDefaults.standard.string(forKey: "email") ?? ""
+        let getPassword = UserDefaults.standard.string(forKey: "password") ?? ""
+        XCTAssertEqual(getEmail, email, "Emailが一致しません")
+        XCTAssertEqual(getPassword, password, "Passwordが一致しません")
     }
 }

@@ -1,6 +1,3 @@
-
-import UIKit
-
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -107,17 +104,13 @@ class LoginViewController: UIViewController {
             showAlert(message: "Emailとパスワードを入力してください。")
             return
         }
-        
         if !isValidEmail(email) {
             showAlert(message: "正しいEmailアドレスを入力してください。")
             return
         }
         
-        // UserDefaults保存
-        let savedEmail = appViewModel.setUserInfo()["email"] as? String
-        let savedPassword = appViewModel.setUserInfo()["password"] as? String
-        
-        // UserDefaultsのチェック
+        let savedEmail = appViewModel.getUserInfo()["email"] as? String
+        let savedPassword = appViewModel.getUserInfo()["password"] as? String
         if email == savedEmail && password == savedPassword {
             //遷移
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
@@ -147,20 +140,20 @@ class LoginViewController: UIViewController {
         }
         
         // UserDefaults保存
-        let savedEmail = appViewModel.setUserInfo()["email"] as? String
-        let savedPassword = appViewModel.setUserInfo()["password"] as? String
+        appViewModel.setUserInfo(email: email, password: password)
         showAlert(message: "登録が完了しました")
     }
     
-    // UserDefaultsのメール、パスワードを表示
+    // TextFieldへの自動入力
     func setMailAndPassword() {
         // ローカル保存のデータを入力した状態で、再度ログイン画面に
-        if let savedEmail = UserDefaults.standard.string(forKey: "email") {
+        if let savedEmail = appViewModel.getUserInfo()["email"] as? String {
             emailTextField.text = savedEmail
         }
-        if let savedPassword = UserDefaults.standard.string(forKey: "password") {
+        if let savedPassword = appViewModel.getUserInfo()["password"] as? String {
             passwordTextField.text = savedPassword
         }
+        
     }
 }
 
