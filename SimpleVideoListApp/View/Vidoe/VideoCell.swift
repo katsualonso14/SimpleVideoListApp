@@ -8,10 +8,9 @@ class VideoCell: UITableViewCell {
     
     let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.hidesWhenStopped = true // ストップ時に非表示
+        indicator.hidesWhenStopped = true // アニメーション停止時に非表示
         return indicator
     }()
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

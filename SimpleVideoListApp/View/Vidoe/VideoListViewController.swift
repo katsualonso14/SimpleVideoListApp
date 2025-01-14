@@ -21,7 +21,6 @@ class VideoListViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         }
-        
         appViewModel.setVisitedBefore() // 初回起動フラグセット
         loginCheckViewModel.setLoginTime() // 最後のログイン時間保存
         
@@ -46,7 +45,7 @@ class VideoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! VideoCell
         let videoItem = videoItems[indexPath.row]
-        cell.titleLabel.text = videoItem.title
+        cell.titleLabel.text = videoItem.title == "" ? "Not specified" : videoItem.title
         cell.nameLabel.text = videoItem.name
         cell.idLabel.text = videoItem.id
         // 画像取得
@@ -62,7 +61,6 @@ class VideoListViewController: UITableViewController {
     }
     // タップ時の処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("id: \(videoItems[indexPath.row].id)") // 確認用
         let videoScreenViewController = VideoScreenViewController()
         videoScreenViewController.id = videoItems[indexPath.row].id
         navigationController?.pushViewController(videoScreenViewController, animated: true)

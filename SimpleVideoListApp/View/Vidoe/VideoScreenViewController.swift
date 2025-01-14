@@ -39,20 +39,17 @@ class VideoScreenViewController: UIViewController, WKUIDelegate {
 
     func setupTextField() {
         urlTextField = UITextField()
-        urlTextField.frame = CGRect(x: 20, y: 130, width: self.view.frame.width - 40, height: 40)
         urlTextField.placeholder = "Enter URL"
         urlTextField.borderStyle = .roundedRect
         urlTextField.text = "https://live.fc2.com/\(id)"
-        // WebViewを再読み込み
-        urlTextField.addTarget(self, action: #selector(reloadWebView), for: .editingChanged)
         view.addSubview(urlTextField)
-
-    }
-    
-    @objc func reloadWebView() {
-        if let url = URL(string: urlTextField.text ?? "") {
-            let request = URLRequest(url: url)
-            webView.load(request)
-        }
+        
+        urlTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            urlTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            urlTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            urlTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            urlTextField.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
 }
